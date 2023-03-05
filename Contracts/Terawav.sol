@@ -494,7 +494,7 @@ contract TeraWav is ERC721{
     AggregatorV3Interface internal priceFeed;
   
     constructor() ERC721("TeraWav", "TWAV") public {
-        priceFeed = AggregatorV3Interface(0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e);
+        priceFeed = AggregatorV3Interface(0xAB594600376Ec9fD91F8e885dADF0CE036862dE0);
     }
   receive() external payable {
             

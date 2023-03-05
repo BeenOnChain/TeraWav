@@ -278,7 +278,7 @@ background-color: #222222  !important;
           var numchain = {'0x89' : 'Polgyon'}
          
         
-          var addychain = {'Polygon' : '0xf9680d99d6c9589e2a93a78a04a279e509205945'};
+          var addychain = {'Polygon' : '0xAB594600376Ec9fD91F8e885dADF0CE036862dE0'};
         
           var capchain = {'Polygon': 'ETH/USD'};
           var choosechain = numchain[chainIDs];
@@ -302,7 +302,7 @@ background-color: #222222  !important;
                                 
                                 console.log('Smart Contract Address: ' + addychain[choosechain])
                                 console.log("Latest " + capchain[choosechain] + " price was: " + parseInt(data)/ 100000000);
-                                document.getElementById("mogsub").value = "Ξ " + pricex.toFixed(2) + " ETH" ;
+                                document.getElementById("mogsub").value = "Ξ " + pricex.toFixed(2) + " MATIC" ;
                                 
           
                                                                                               }
@@ -476,13 +476,14 @@ if (chainIDs !== "0x89") {
           
 
             <div class="container d-flex h-100 align-items-center  animate__animated animate__fadeInDown">
-                  <div class="mx-auto text-center">
+    
+              <div class="mx-auto text-center">
                    
 
-                   
+
                   
                     <img  onload = "changex();changext();" class="img-fluid "  src="pics/pic/immortal.png" width = "350" height = "350" alt="" >
-                    
+
                         
                     <button id = "ineedit" class="btn blur blur-rounded btn-grey mogul-btn" style= "font-size: 1px; padding: 5px 40px; right: 5px;  " data-toggle="modal" data-target="" data-whatever="@mdo"
                         onclick = "blackout(); blackout();">
@@ -523,11 +524,13 @@ if (chainIDs !== "0x89") {
                   background-color: #464545  !important;
                   }
                         </style>
-                     <a class="text-white" style = "font-size: 20px;  border-radius:5%; right: 0px; top: 7px; position: relative" onclick = "blackout(); "> $50
-                    </a>
+                        
+                        <input type = "button" class="btn text-white blur blur-rounded btn-grey" id = "PurchaseETH" style = "font-size: 11px; right: 20px; top: 0px; position: relative" onclick = "blackout(); " value = ""><img src="pics/pic/polygon.png" width = "12px" style = "position: relative; border-radius: 0%; top: -2px; right:48px " > 
+
+                      </a>
                     <input type ="button" class="btn text-white blur blur-rounded btn-greygrey" id = 'mogsub' style = "font-size: 15px; left: 15px; top: 0px; position: relative" onclick = "blackout();" value ="Connect">
                   </input>
-                     
+
                   
                     <style>
                       .btn-greygrey {
@@ -546,7 +549,7 @@ if (chainIDs !== "0x89") {
                         var numchain = {'0x89' : 'Polygon'}
                        
                       
-                        var addychain = {'Polygon' : '0xf9680d99d6c9589e2a93a78a04a279e509205945'};
+                        var addychain = {'Polygon' : '0x7A396A11d5716bb7462171dd49B3BE2D941FE593'};
                       
                         var capchain = {'Polygon': 'ETH/USD'};
                         var choosechain = numchain[chainIDs];
@@ -558,7 +561,7 @@ if (chainIDs !== "0x89") {
                                      from: accounts[0],
                                      to: addychain[choosechain],  
                                      chainid: chainIDs,
-                                     data: '0x50d25bcd'}, 'latest']
+                                     data: '0x1b222ecb'}, 'latest']
                         })
                         .catch((err) => { if(err.code === 4001 ) 
                           {console.log(err.code)}
@@ -566,11 +569,11 @@ if (chainIDs !== "0x89") {
                                 ).then(result => { if(result === undefined) {console.log(result)} else{
                                               var data = result;                       
                                               console.log(parseInt(data));
-                                              const pricex = (50) / (parseInt(data) / 100000000);
+                                              const pricex = (parseInt(data) / 1000000000000000000);
                                               
                                               console.log('Smart Contract Address: ' + addychain[choosechain])
                                               console.log("Latest " + capchain[choosechain] + " price was: " + parseInt(data)/ 100000000);
-                                              document.getElementById("mogsub").value = "Ξ " + pricex.toFixed(2) + " ETH" ;
+                                              document.getElementById("mogsub").value = pricex.toFixed(2) + " MATIC" ;
                                               
                         
                                                                                                             }
@@ -591,6 +594,7 @@ if (chainIDs !== "0x89") {
 
 
                 </div>
+
             </div>
             
         </header>

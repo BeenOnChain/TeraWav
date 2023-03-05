@@ -3042,19 +3042,15 @@ fieldset:disabled a.btn {
 .blur {
 
   color: #ffffff00;
-  border-color: #ffffff;
-  box-shadow: 0 8px 100px -4px rgb(255, 255, 255);
+  
 }
 
 .blur.saturation-less {
-  backdrop-filter: saturate(20%) blur(30px);
   
 }
 
 .blur.blur-rounded {
   border-radius: 40px;
-  border-color: #ffffff;
-  box-shadow: 0 8px 8px -4px rgb(255, 255, 255);
 }
 
 

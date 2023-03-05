@@ -23,9 +23,9 @@ async function TERAWAV_ORACLE_CALL() {
   var numchain = {'0x89' : 'Polygon'}
  
 
-  var addychain = {'Polygon' : '0xf9680d99d6c9589e2a93a78a04a279e509205945'};
+  var addychain = {'Polygon' : '0x7A396A11d5716bb7462171dd49B3BE2D941FE593'};
 
-  var capchain = {'Polygon': 'ETH/USD'};
+  var capchain = {'Polygon': 'MATIC/USD'};
   var choosechain = numchain[chainIDs];
   
    
@@ -33,9 +33,9 @@ async function TERAWAV_ORACLE_CALL() {
     method: 'eth_call',
     params: [{  
                from: accounts[0],
-               to: addychain[choosechain],  
+               to: "0x7A396A11d5716bb7462171dd49B3BE2D941FE593",  
                chainid: chainIDs,
-               data: '0x890d25bcd'}, 'latest']
+               data: '0x1b222ecb'}, 'latest']
   })
   .catch((err) => { if(err.code === 4001 ) 
     {console.log(err.code)}
@@ -43,11 +43,11 @@ async function TERAWAV_ORACLE_CALL() {
           ).then(result => { if(result === undefined) {console.log(result)} else{
                         var data = result;                       
                         console.log(parseInt(data));
-                        const pricex = (50) / (parseInt(data) / 100000000);
+                        const pricex = (parseInt(data) / 1000000000000000000);
                         
                         console.log('Smart Contract Address: ' + addychain[choosechain])
                         console.log("Latest " + capchain[choosechain] + " price was: " + parseInt(data)/ 100000000);
-                        document.getElementById("mogsub").value = "Ξ " + pricex.toFixed(2) + " ETH" ;
+                        document.getElementById("mogsub").value = pricex.toFixed(2) + " MATIC" ;
                         
   
                                                                                       }

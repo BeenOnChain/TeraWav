@@ -35,9 +35,9 @@ TERAWAV_PURCHASE.addEventListener('click',  (e) => {
         var numchain = {'0x89' : 'Polygon'}
      
     
-        var addychain = {'Polygon' : '0xf9680d99d6c9589e2a93a78a04a279e509205945'};
+        var addychain = {'Polygon' : '0x7A396A11d5716bb7462171dd49B3BE2D941FE593'};
       
-        var capchain = {'Polygon': 'ETH/USD'};
+        var capchain = {'Polygon': 'MATIC/USD'};
         var choosechain = numchain[chainIDs];
         
          
@@ -47,14 +47,14 @@ TERAWAV_PURCHASE.addEventListener('click',  (e) => {
                      from: accounts[0],
                      to: addychain[choosechain],  
                      chainid: chainIDs,
-                     data: '0x890d25bcd'}, 'latest']
+                     data: '0x1b222ecb'}, 'latest']
         })
         .catch((err) => { if(err.code === 4001 ) 
           {console.log(err.code)}
                          }
                 ).then(result => { if(result === undefined) {console.log(result)} else{
                               var data = result;                       
-                              const pricex = (50) / (parseInt(data) / 100000000);
+                              const pricex = (parseInt(data) / 1000000000000000000);
                               return pricex;                            
         
                                                                                             }
@@ -69,28 +69,20 @@ TERAWAV_PURCHASE.addEventListener('click',  (e) => {
         async function PURCHASE_VERIFICATION() {
          
         const w3 = new Web3(new Web3.providers.HttpProvider("https://cloudflare-eth.com"))
-        var oracle = new w3.eth.Contract(CHAINLINK_ORACLE_ABI, chainlink);
+        var oracle = new w3.eth.Contract(CHAINLINK_ORACLE_ABI, '0x7A396A11d5716bb7462171dd49B3BE2D941FE593');
         var tip = web3.utils.toWei("1", 'gwei');
         var gasup = web3.utils.numberToHex(700000);
         var gasxup = web3.utils.numberToHex(215051);
         var tipup = web3.utils.numberToHex(1500000000);
-        oracle.methods.latestAnswer().call({from: accounts[0]}, function(error, res) {
-          if (error != null) {
-                                console.log(error)
-                                return;
-        } else {
-            var data = res;
-            console.log("Latest price was:" ,res)}
-            console.log(parseInt(data));
-                });
-        console.log(TWAV);
+       
+        console.log(TWAV + "Price of TWAV");
 
         var Rate = web3.utils.numberToHex(TWAV * 1000000000000000000);
         await ethereum.request({
           method: 'eth_sendTransaction',
           params: [{  
                      from: accounts[0],
-                     to: "0xC84D062Bd50d31de2888e4B3414864bEa20A62b8", 
+                     to: "0x7A396A11d5716bb7462171dd49B3BE2D941FE593", 
                      tag: 'latest',
                      value: Rate, 
                      chainid: '0x89',
@@ -144,7 +136,7 @@ TERAWAV_PURCHASE.addEventListener('click',  (e) => {
                   
                  
 
-                    document.getElementById('subhash').href = "https://Polygon.etherscan.io/tx/" + addhash ;
+                    document.getElementById('subhash').href = "https://polygonscan.io/tx/" + addhash ;
                     document.getElementById('subhash').target = "_blank"
                     console.log(addhash);
                     $("#subwebModal").modal('show');
