@@ -2,9 +2,9 @@
 
 NFT project for music producers. It allows Music Producers to create NFTs for their production kits. Which gives their users access to community access, future rewards, and community perks. The music producer market is a $500 million opportunity.
 
-![image](https://user-images.githubusercontent.com/42082720/222979129-23b7f33b-199d-4de0-ad66-45185220a584.png)
+![image](https://user-images.githubusercontent.com/42082720/222979243-15807a12-b9de-4b2c-966e-c49a69996770.png)
 
-![image](https://user-images.githubusercontent.com/42082720/222979141-70f92b0b-ad35-464f-9da1-0e3c3ce0ff4e.png)
+![image](https://user-images.githubusercontent.com/42082720/222979256-fcbe29b7-5bd3-429b-a747-b231ccc38119.png)
 
 ![image](https://user-images.githubusercontent.com/42082720/222979183-c67a86cd-8d5d-476c-b516-64ffcaac423b.png)
 
